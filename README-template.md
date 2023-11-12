@@ -66,31 +66,77 @@ To see how you can add code snippets, see below:
   </div>
 ```
 ```css
+@keyframes animetion-content {
+    0% {
+        height: 17em;
+        overflow: hidden;
+        transform:
+            translate(-50%, -50%) scale(3);
+    }
+
+    20% {
+        height: 17em;
+        box-shadow: 0 0 9em #0008;
+        overflow: hidden;
+        transform:
+            translate(-50%, -50%) scale(2.7);
+    }
+
+    100% {
+        height: 26em;
+        box-shadow: 0 0 0.9em #0008;
+        overflow: hidden;
+        transform:
+            translate(-50%, -50%) scale(1);
+    }
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(212, 45%, 89%);
+    --grayish-blue: hsl(220, 15%, 55%);
+    --dark-blue: hsl(218, 44%, 22%);
+    --pfont-size: 15px;
+
+    --ani-time: 3s;
+}
+
 body {
     background: var(--light-gray);
 }
+
+
 .content {
-    width: 15em;
-    height: 24em;
+    width: 17em;
+    height: 26em;
     border-radius: 1em;
     padding: 1em;
+    box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--white);
+    box-shadow: 0 0 0.9em #0008;
+    /* animation: animetion-content var(--ani-time); */
 }
 
 .content img {
     width: 15rem;
     border-radius: .5em;
+    transition:
+        position 1s,
+        width 1s;
 }
-h1{ 
+
+
+h1 {
     text-align: center;
     font-family: outfit-bold;
     font-size: 20px;
 }
-p{
+
+p {
     text-align: center;
     font-family: outfit-regular;
     font-size: 15px;
